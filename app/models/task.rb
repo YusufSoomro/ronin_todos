@@ -11,5 +11,5 @@
 #
 
 class Task < ApplicationRecord
-
+  scope :current_tasks, -> { where(is_done: false) }
 end
