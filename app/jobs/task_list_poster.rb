@@ -4,11 +4,11 @@ class TaskListPoster < ApplicationJob
   def perform(nightbot_url, message_slice="")
     uri = URI.parse(nightbot_url)
 
-    header = {'Content-Type': 'text/plain'}
+    header = {'Content-Type': 'text/json'}
 
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri, header)
-    request.body = "testing"
+    request.body = {"message" => "testing"}.to_json
 
 # Send the request
     response = http.request(request)
