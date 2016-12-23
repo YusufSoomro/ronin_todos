@@ -4,7 +4,6 @@ class TasksController < ActionController::Base
     @most_recent_task.update!(times_displayed: @most_recent_task.times_displayed + 1) if !Rails.env.development?
 
     nightbot_url = request.env["HTTP_NIGHTBOT_RESPONSE_URL"]
-    nightbot_url[4] = ''
 
     Rails.logger.info(params.keys)
     Rails.logger.info(params.values)
