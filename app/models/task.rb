@@ -13,5 +13,15 @@
 class Task < ApplicationRecord
   scope :current_tasks, -> { where(is_done: false) }
 
-  validates :description, :is_done, :task_list_id, presence: true
+  validates :description, :task_list_id, presence: true
+
+  belongs_to :task_list
+  has_many :subtasks, dependent: :destroy
+
+  CHECK_MARK = "✔"
+  BULLET_POINT = "•"
+
+  def is_really_done?
+    subtasks.all? { |subtask| subtask.is_done } || is_done
+  end
 end

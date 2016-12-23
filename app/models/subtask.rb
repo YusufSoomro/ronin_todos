@@ -11,5 +11,7 @@
 #
 
 class Subtask < ApplicationRecord
-  validates :description, :is_done, :task_id, presence: true
+  validates :description, :task_id, presence: true
+
+  belongs_to :task
 end

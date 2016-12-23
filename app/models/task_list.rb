@@ -13,4 +13,6 @@
 class TaskList < ApplicationRecord
   validates :description, :file_path, :times_displayed, presence: true
   validates :times_displayed, numericality: { only_integer: true }
+
+  has_many :tasks, dependent: :destroy
 end

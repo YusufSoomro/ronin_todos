@@ -1,0 +1,23 @@
+the_goal: Right now we want to avoid the Chinese, so we're gonna build up in Scorched Earth, build up a small base in the Center, and assure that no one can settle a base in our old spot that got destroyed.
+tasks:
+  - description: We need a couple outposts in the Center to get resources we lack in Scorched Earth
+    subtasks:
+      - description: SE lacks cementing paste, let's get a bird in a 2x2 with turrets on top of it in the Center.
+      - description: We need plants, which is so much easier in the Center. Set up a compact farm where we can store 2 types of each plant in a greenhouse near one of the obbies, a phiomia, 2 dung beetles, and fertilizer
+  - description: All of our ascendant blueprints are in that Scorched Earth base. We need to lock that place down
+    subtasks:
+      - description: Make 10 more turrets
+      - description: Make two auto turret outposts
+      - description: Completely LAYER everywhere around our base in Species X (get em from the Center)
+      - description: Set up irrigation
+  - description: Right now we hardly have any dinos. Let's get utility dinos, and a bird for each person
+    subtasks:
+      - description: Get a berry gatherer
+      - description: Get a meat harvester (preferrably high level unless we don't have the dino farm set up)
+      - description: Get one bird for every person we have (doesn't have to be high level)
+      - description: Get an Anky
+      - description: Get a Quetz
+  - description: Secure Australia so no one else can set up a base where ours got destroyed
+    subtasks:
+      - description: Make 10 metal pillars and put them down right where our base got destroyed
+      - description: Once we get an Anky and Quetz, make 30 more pillars and place them where our base got destroyed

@@ -1,0 +1,15 @@
+<% if @most_recent_task.times_displayed <= 5 %>
+There's been a new set of tasks produced!
+The goal of this "sprint" is: <%= @most_recent_task.description %>
+
+<% end %>
+All the tasks:
+<% @most_recent_task.tasks.each do |task| %>
+- [<%= Task::CHECK_MARK if task.is_really_done? %>] <%= task.description %>
+  <% if task.subtasks.count > 0 %>
+  <% task.subtasks.each do |subtask| %>
+    <%= Task::BULLET_POINT %> [<%= Task::CHECK_MARK if task.is_really_done? %>] <%= subtask.description %>
+  <% end %>
+  <% end %>
+
+<% end %>
