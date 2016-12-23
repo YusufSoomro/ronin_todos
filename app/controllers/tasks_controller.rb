@@ -5,6 +5,8 @@ class TasksController < ActionController::Base
 
     Rails.logger.info(params.keys)
     Rails.logger.info(params.values)
+    Rails.logger.info(request.headers)
+    binding.pry
     render "discord_task_template.txt.erb", content_type: "text/plain"
   end
 end
