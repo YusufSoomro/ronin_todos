@@ -1,0 +1,10 @@
+All the tasks:
+<% @most_recent_task_list.tasks.each do |task| %>
+- [<%= Task::CHECK_MARK if task.is_really_done? %>] <%= task.description %>
+  <% if task.subtasks.count > 0 %>
+  <% task.subtasks.each do |subtask| %>
+    <%= Task::BULLET_POINT %> [<%= Task::CHECK_MARK if subtask.is_done %>] <%= subtask.description %>
+  <% end %>
+  <% end %>
+
+<% end %>

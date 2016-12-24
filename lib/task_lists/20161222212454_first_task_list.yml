@@ -3,7 +3,7 @@ tasks:
   - description: We need a couple outposts in the Center to get resources we lack in Scorched Earth
     subtasks:
       - description: SE lacks cementing paste, let's get a bird in a 2x2 with turrets on top of it in the Center.
-      - description: We need plants, which is so much easier in the Center. Set up a compact farm where we can store 2 types of each plant in a greenhouse near one of the obbies, a phiomia, 2 dung beetles, and fertilizer
+      - description: Set up a compact farm where we can store 2 types of each plant in a greenhouse near one of the obbies, a phiomia, 2 dung beetles, and fertilizer
   - description: All of our ascendant blueprints are in that Scorched Earth base. We need to lock that place down
     subtasks:
       - description: Make 10 more turrets

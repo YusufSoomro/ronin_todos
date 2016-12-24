@@ -1,16 +1,14 @@
 class TasksController < ActionController::Base
   def index
-    @most_recent_task = TaskList.last
-    @most_recent_task.update!(times_displayed: @most_recent_task.times_displayed + 1) if !Rails.env.development?
+    @most_recent_task_list = TaskList.last
+    @first_unfinished_task = @most_recent_task_list.tasks.detect { |task| !task.is_really_done? }
 
-    nightbot_url = request.env["HTTP_NIGHTBOT_RESPONSE_URL"]
+    render "discord_task_template.txt.erb", content_type: "plain/text"
+  end
 
-    Rails.logger.info(params.keys)
-    Rails.logger.info(params.values)
-    Rails.logger.info(request.env.inspect)
-    Rails.logger.info(nightbot_url)
+  def all_tasks
+    @most_recent_task_list = TaskList.last
 
-    TaskListPoster.perform_later(nightbot_url)
-    head :ok
+    render "all_tasks.txt.erb", content_type: "plain/text"
   end
 end

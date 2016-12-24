@@ -15,4 +15,5 @@ class TaskList < ApplicationRecord
   validates :times_displayed, numericality: { only_integer: true }
 
   has_many :tasks, dependent: :destroy
+  has_many :subtasks, through: :tasks
 end
