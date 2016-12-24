@@ -1,7 +1,7 @@
 class TasksController < ActionController::Base
   def index
     @most_recent_task_list = TaskList.last
-    @first_unfinished_task = @most_recent_task_list.tasks.detect { |task| !task.is_really_done? }
+    @first_unfinished_task = @most_recent_task_list.tasks.order(:id).detect { |task| !task.is_really_done? }
 
     render "discord_task_template.txt.erb", content_type: "text/plain"
   end
